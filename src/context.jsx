@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
       type: "HOME_UPDATE",
       payload: {
         name: "STOCK ARCHERY",
-        image: "/G.gif",
+        image: "./images/2.gif",
         paragraph: "Welcome to Stock Archery, your premier source for expert trading knowledge and strategies. Achieve trading success with our in-depth resources, tips, and insights tailored for savvy investors. Start mastering the market today",
       },
     });
