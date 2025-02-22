@@ -5,7 +5,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import { GiFireplace } from "react-icons/gi";
 import { ImStatsDots } from "react-icons/im";
 import { FaMapLocationDot } from "react-icons/fa6";
-import { CentreFranchiseData, CentreFranchiseData2, CentreFranchiseData3 } from "../CentreFranchise/CentreFranchiseData";
+import { CentreFranchiseData, CentreFranchiseData2, CentreFranchiseData3, CentreFranchiseData4 } from "../CentreFranchise/CentreFranchiseData";
 const Franchise = () => {
   const inputRef = useRef(null);
   const [formData, setFormData] = useState({
@@ -224,7 +224,26 @@ Email Input */}
         </div>
       </section>
 
+      {/* Listen from our users & students section */}
 
+      <section className={styles.listenFromUsersContainer}>
+        <h1 className={styles.listenFromUsersTitle}>Listen from our users & students</h1>
+        <div className={styles.listenFromUsersCardContainer}>
+          {CentreFranchiseData4.map((data, index) => (
+            <div key={index} className={styles.listenFromUsersCard}>
+              <video autoPlay loop controls className={styles.listenFromUsersVideo}>
+                <source src={data.videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className={styles.videoInfo}>
+                <h3>{data.name}</h3>
+                <p>{data.role}</p>
+                <p className={styles.host}>Host: {data.host}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
     </div>
 

@@ -21,7 +21,7 @@ import { IoTicketOutline } from "react-icons/io5";
 import { MdLibraryAdd } from "react-icons/md";
 import { GiPizzaCutter } from "react-icons/gi";
 import { TbBinaryTree } from "react-icons/tb";
-
+import video from "/pro.mp4"
 export const CentreFranchiseData = [
 
 
@@ -131,4 +131,29 @@ export const CentreFranchiseData3 = [
         title: "Social Engagement",
         text: "Fueling success through social engagement, our Hybrid Learning Center creates a dynamic space where students connect, collaborate, and thrive.",
     }
+]
+
+
+
+//Listen from our users & students section
+
+export const CentreFranchiseData4 = [
+    {
+        name: "Arvind Sharma",
+        role: "Student",
+        host: "Romil Saini",
+        videoSrc: video,
+    },
+    {
+        name: "Samarth",
+        role: "Student",
+        host: "Romil Saini",
+        videoSrc: video,
+    },
+    {
+        name: "Testimonial 3",
+        role: "Student",
+        host: "Host Name",
+        videoSrc: video,
+    },
 ]

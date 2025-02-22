@@ -105,7 +105,7 @@ const Nav = styled.nav`
     }
   }
 
-  /* Overlay that dims the background when the menu is open */
+  /* Overlay effect */
   .overlay {
     position: fixed;
     top: 0;
@@ -124,8 +124,8 @@ const Nav = styled.nav`
     visibility: visible;
   }
 
-  /* Mobile view */
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  /* Show hamburger menu when screen size is 1000px or smaller */
+  @media (max-width: 1000px) {
     .mobile-navbar-btn {
       display: block;
     }
