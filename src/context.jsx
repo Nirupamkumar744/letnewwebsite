@@ -3,8 +3,6 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 
-const API = "https://backendapi-production-1726.up.railway.app/service";
-
 const initialState = {
   name: "",
   image: "",
@@ -47,22 +45,7 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  const getServices = async (url) => {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      const data = await res.json();
-      dispatch({ type: "GET_SERVICES", payload: data });
-    } catch (error) {
-      console.error("Failed to fetch services:", error);
-    }
-  };
-
-  useEffect(() => {
-    getServices(API);
-  }, []);
+ 
 
   // Call updateVideoPage to set values specific to the video page
   useEffect(() => {

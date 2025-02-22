@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         <ul className={`navbar-list ${openMenu ? "active" : ""}`} role="menubar">
-          {["Home", "About", "Testimonials", "Contact", "Blog", "FAQ", "Franchise"].map(
+          {["Home", "About","Contact", "Blog", "FAQ", "Franchise"].map(
             (item, index) => (
               <li key={index} role="none">
                 <NavLink
