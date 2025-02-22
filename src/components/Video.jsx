@@ -69,15 +69,15 @@ const Video = () => {
   useEffect(() => {
     if (videoRef.current) {
       const video = videoRef.current;
-      video.muted = true; // Ensure autoplay works
-      video.preload = "auto"; // Preload the video
+      video.muted = true;
+      video.preload = "auto";
 
       const playVideo = () => {
         video.play()
           .then(() => {
             setTimeout(() => {
               video.muted = false;
-              video.volume = 0.1;
+              video.volume = 0.000001;
             }, 1000);
           })
           .catch((error) => {
