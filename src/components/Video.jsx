@@ -77,7 +77,7 @@ const Video = () => {
           .then(() => {
             setTimeout(() => {
               video.muted = false;
-              video.volume = 0.000001;
+              video.volume = 0.00001;
             }, 1000);
           })
           .catch((error) => {
