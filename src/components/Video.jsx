@@ -67,24 +67,19 @@ const Video = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-      video.muted = true;
-      video.preload = "auto";
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true; // Ensure video starts muted
+      video.preload = "auto"; // Preload the video for smoother playback
 
       const playVideo = () => {
-        video.play()
-          .then(() => {
-            setTimeout(() => {
-              video.muted = false;
-              video.volume = 0.00001;
-            }, 1000);
-          })
-          .catch((error) => {
-            console.error("Autoplay failed:", error);
-          });
+        video.play().catch((error) => {
+          console.error("Autoplay failed:", error);
+        });
       };
 
+      // Wait for video to be ready, then play
       if (video.readyState >= 3) {
         playVideo();
       } else {
@@ -92,14 +87,19 @@ const Video = () => {
       }
 
       // Ensure looping works correctly
-      video.addEventListener("ended", () => {
+      const onEnded = () => {
         video.currentTime = 0;
-        video.play();
-      });
+        video.play().catch((error) => {
+          console.error("Autoplay failed after looping:", error);
+        });
+      };
+
+      video.addEventListener("ended", onEnded);
 
       return () => {
+        // Cleanup event listeners
         video.removeEventListener("canplaythrough", playVideo);
-        video.removeEventListener("ended", () => {});
+        video.removeEventListener("ended", onEnded);
       };
     }
   }, []);
