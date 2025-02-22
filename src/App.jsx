@@ -7,7 +7,6 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import { ThemeProvider } from 'styled-components';
-import Review from './components/review';
 import Video from './components/Video';
 import FAQ from './components/Faq';
 import WhatsAppButton from './components/Whatsappbutton';
@@ -56,7 +55,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/review" element={<Review />} />
           <Route path="/video" element={<Video />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/blog" element={<BlogPage />} />
