@@ -253,18 +253,20 @@
     color: red;
 }
 
+/* Minimum Area Required section */
+
 /* icon Card */
 
 .iconCard {
     background: #f9f9f9;
-    padding: min(5vw, 1.5rem);
+    padding: min(5vw, 3rem);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: auto;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -277,7 +279,7 @@
 
 .iconTitle {
 
-    font-size: min(2vw, 1.5rem);
+    font-size: 1.5rem;
     margin-top: 20px;
 }
 
@@ -295,10 +297,17 @@
 
 .iconText {
     color: #a6a6a6;
-    margin: 0;
-    font-size: min(5vw, 1rem);
+    margin-top: 5px;
+    font-size: 1.5rem;
 }
 
+@media screen and (max-width:700px) {
+    .iconCard {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
 
 /* Centre Franchise Approval Process Section */
 
@@ -572,4 +581,58 @@
 
 .host {
     font-weight: bold;
+}
+
+
+
+/* Listen from the Founder!! */
+
+.listenFromFounderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #000;
+    margin-inline: -80px;
+    padding: 75px;
+    position: static
+}
+
+.listenFromFounderVideo {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.listenFromFounderWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.listenFromFounderTitle {
+    color: #fff;
+    font-size: min(3vw, 3.5rem);
+}
+
+.listenFromFounderText {
+    font-size: min(3vw, 2rem);
+}
+
+@media screen and (max-width:480px) {
+    .listenFromFounderContainer {
+        flex-direction: column;
+        gap: 20px;
+        padding-inline: 20px;
+    }
+
+    .listenFromFounderVideo {
+        width: 70%;
+    }
+
+    .listenFromFounderText {
+        text-align: center;
+        margin-inline: 50px;
+    }
 }

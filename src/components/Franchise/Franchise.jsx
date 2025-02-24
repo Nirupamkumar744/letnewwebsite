@@ -139,7 +139,7 @@ Email Input */}
       {/* Video Section */}
       <div className={styles.videoSection}>
         <div className={styles.videoWrapper}>
-          <video autoPlay loop controls className={styles.video}>
+          <video controls className={styles.video}>
             <source src="/pro.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -154,7 +154,9 @@ Email Input */}
 
       </div>
 
-      <div className={styles.iconCard}>
+      {/* Minimum Area Required section */}
+
+      <section className={styles.iconCard}>
         <div className={styles.iconContainer}>
           <GiFireplace className={styles.processIcons} color="d88d3c" />
           <h4 className={`${styles.iconTitle} ${styles.iconAreaTitle}`}>Minimum Area Required</h4>
@@ -173,7 +175,7 @@ Email Input */}
           <p className={styles.iconText}>India 1 & India 2</p>
         </div>
 
-      </div>
+      </section>
 
       {/* Centre Franchise Approval Process Section */}
 
@@ -231,7 +233,7 @@ Email Input */}
         <div className={styles.listenFromUsersCardContainer}>
           {CentreFranchiseData4.map((data, index) => (
             <div key={index} className={styles.listenFromUsersCard}>
-              <video autoPlay loop controls className={styles.listenFromUsersVideo}>
+              <video controls className={styles.listenFromUsersVideo}>
                 <source src={data.videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -242,6 +244,20 @@ Email Input */}
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Listen from the Founder!! */}
+      <section className={styles.listenFromFounderContainer}>
+        <video controls className={styles.listenFromFounderVideo}>
+          <source src="/founder.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className={styles.listenFromFounderWrapper}>
+          <h1 className={styles.listenFromFounderTitle}>Listen from the Founder!!</h1>
+          <p className={styles.listenFromFounderText}>
+            Hear from the founder of StockArchery about the vision and mission of the company.
+          </p>
         </div>
       </section>
 
