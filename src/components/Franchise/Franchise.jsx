@@ -252,7 +252,7 @@ Email Input */}
       <section className={styles.listenFromFounderContainer}>
         <video controls className={styles.listenFromFounderVideo}>
           <source src="/founder.mp4" type="video/mp4" />
-          Open on Chrome to play
+          Open on Chrome to play.
         </video>
         <div className={styles.listenFromFounderWrapper}>
           <h1 className={styles.listenFromFounderTitle}>Listen from the Founder!!</h1>
