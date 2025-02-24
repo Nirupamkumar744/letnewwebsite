@@ -252,7 +252,7 @@ Email Input */}
       <section className={styles.listenFromFounderContainer}>
         <video controls className={styles.listenFromFounderVideo}>
           <source src="/founder.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          Open on Chrome to play
         </video>
         <div className={styles.listenFromFounderWrapper}>
           <h1 className={styles.listenFromFounderTitle}>Listen from the Founder!!</h1>
@@ -268,4 +268,4 @@ Email Input */}
   );
 };
 
-export default Franchise;
+export default Franchise; 
