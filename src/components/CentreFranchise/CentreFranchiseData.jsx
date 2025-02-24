@@ -75,7 +75,7 @@ export const CentreFranchiseData2 = [
     },
     {
         icon: <HiUserGroup color="#00a2ff" className={styles.chooseIcon} />,
-        title: "50,000+ user base",
+        title: "50,000+ Social media followers",
     },
     {
         icon: <GrUserExpert color="#7acfff" className={styles.chooseIcon} />,
@@ -83,11 +83,11 @@ export const CentreFranchiseData2 = [
     },
     {
         icon: <FaUserGraduate color="#6c3de3" className={styles.chooseIcon} />,
-        title: "2K Enrolled Learners",
+        title: "500+ Enrolled Learners",
     },
     {
         icon: <GiIndianPalace color="green" className={styles.chooseIcon} />,
-        title: "PAN India Brand Presence",
+        title: "Social Media Presence",
     },
     {
         icon: <BsFillBarChartLineFill color="#07e30e" className={styles.chooseIcon} />,
