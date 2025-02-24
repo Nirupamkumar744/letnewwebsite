@@ -140,6 +140,7 @@ Email Input */}
       <div className={styles.videoSection}>
         <div className={styles.videoWrapper}>
           <video controls className={styles.video}>
+          <source src="/pro.webm" type="video/webm" />
             <source src="/pro.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>

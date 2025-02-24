@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { db } from "./components/firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    phonenumber: "",
-    message: "",
-    tradingExperience: "",
-    city: "",
-    occupation: "",
-  });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,120 +30,102 @@ const Contact = () => {
   };
 
   const Wrapper = styled.section`
-    padding: 9rem 1rem 5rem 1rem;
-    background-color: ${({ theme }) => theme.colors.background};
-
-    @media (min-width: 768px) {
-      padding: 9rem 2rem 5rem 2rem;
-    }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://source.unsplash.com/1600x900/?finance,technology") no-repeat center;
+    background-size: cover;
+    padding: 2rem;
 
     .container {
-      margin-top: 6rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 15px;
+      padding: 3rem;
+      width: 100%;
+      max-width: 500px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
 
-      .contact-form {
-        max-width: 600px;
-        margin: auto;
-        padding: 2rem;
-        background-color: ${({ theme }) => theme.colors.white};
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
+    h2 {
+      font-size: 2rem;
+      color: #222; /* Dark color for better visibility */
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for readability */
+      background: rgba(255, 255, 255, 0.6); /* Light background for contrast */
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
 
-        &:hover {
-          transform: translateY(-5px);
-        }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9); /* White background for inputs */
+      color: #222;
+      outline: none;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: #555;
       }
 
-      .contact-inputs {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        input,
-        textarea {
-          padding: 1rem;
-          border: 1px solid ${({ theme }) => theme.colors.gray};
-          border-radius: 5px;
-          font-size: 1.2rem;
-          width: 100%;
-          transition: border-color 0.3s;
-
-          &:focus {
-            border-color: ${({ theme }) => theme.colors.yellow};
-            outline: none;
-          }
-        }
-
-        textarea {
-          resize: vertical;
-          min-height: 150px;
-        }
-
-        input[type="submit"] {
-          cursor: pointer;
-          transition: all 0.3s;
-          padding: 1rem;
-          background-color: ${({ theme }) => theme.colors.yellow};
-          color: #fff;
-          border: none;
-          font-size: 1.2rem;
-          text-align: center;
-          margin-top: 1rem;
-          border-radius: 5px;
-
-          &:hover {
-            background-color: ${({ theme }) => theme.colors.darkYellow};
-            transform: scale(1.05);
-          }
-        }
+      &:focus {
+        background: #fff;
+        border-color: #ff7eb3;
+        box-shadow: 0 0 10px rgba(255, 126, 179, 0.5);
       }
     }
 
-    iframe {
-      border: 0;
+    textarea {
+      resize: none;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #ff7eb3, #ff5f9e);
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: linear-gradient(135deg, #ff5f9e, #ff3b80);
+        transform: translateY(-3px);
+      }
     }
   `;
 
   return (
     <Wrapper>
-      <h2 className="common-heading">Feel Free to Contact Us</h2>
-
       <div className="container">
-        <div className="contact-form">
-          <form onSubmit={handleSubmit} className="contact-inputs">
-            <input
-              type="text"
-              name="username"
-              placeholder="Name"
-              autoComplete="off"
-              required
-            />
-
-            <input
-              type="tel"
-              name="phonenumber"
-              placeholder="Phone Number"
-              autoComplete="off"
-              required
-            />
-
-            <textarea
-              name="message"
-              cols="30"
-              rows="6"
-              placeholder="Your message"
-              autoComplete="off"
-              required
-            ></textarea>
-
-            <input type="text" name="tradingExperience" placeholder="Trading Experience" />
-            <input type="text" name="city" placeholder="City" />
-            <input type="text" name="occupation" placeholder="Occupation" />
-
-            <input type="submit" value="Send" />
-          </form>
-        </div>
+        <h2>Get in Touch</h2>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input type="text" name="username" placeholder="Your Name" required />
+          <input type="tel" name="phonenumber" placeholder="Phone Number" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <input type="text" name="tradingExperience" placeholder="Trading Experience" />
+          <input type="text" name="city" placeholder="City" />
+          <input type="text" name="occupation" placeholder="Occupation" />
+          <button type="submit" className="submit-btn">Send Message</button>
+        </form>
       </div>
     </Wrapper>
   );
